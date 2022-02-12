@@ -1,16 +1,16 @@
 # IMU-ROS Simulation Package
 
-> This package is meant to be used alongside a simulator (e.g. Unity...). The noise model algorithm adds noise to a "true" IMU reading (linear acceleration, angular velocity) to produce a "real" IMU reading. The noise added should be unpredictable. The ultimate goal of this package is to create a more realistic simulation.
+> This package is meant to be used alongside ROS and a simulation env (e.g. Unity...). The noise model algorithm adds noise to a "true" IMU reading (linear acceleration, angular velocity) to produce a "real" IMU reading. The noise added should be unpredictable. The ultimate goal of this package is to create a more realistic simulation.
 
 <!-- > Live demo [_here_](https://www.example.com). If you have the project hosted somewhere, include the link here. -->
 
-Disclaimer: The algorithm is based on https://github.com/Aceinna/gnss-ins-sim. Modifications were made to suit real-time use case. 1 input reading -> 1 output reading , instead of taking in a bunch of readings and perform the algorithm.
+Disclaimer: The algorithm is based on https://github.com/Aceinna/gnss-ins-sim. Modifications were made to suit real-time use case. 1 true input reading(from simulator) -> 1 real output reading , instead of taking in a bunch of readings and perform the algorithm.
 
 ## Table of Contents
 
 - [General Info](#general-information)
 - [Features](#features)
-- [Imu Models](#imu-models)
+<!-- - [Imu Models](#imu-models) -->
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Status](#project-status)
@@ -21,7 +21,7 @@ Disclaimer: The algorithm is based on https://github.com/Aceinna/gnss-ins-sim. M
 
 ## General Information
 
-- The motivation of developing this package is to integrate it into a Unity simulation to test underwater robots with more accurate sensor models. However, this package could virtually be integrated with any robotics simulation that uses IMU.
+- The motivation of developing this package is to integrate it into a Unity-ROS simulation to test navigation systmes of underwater robots with more accurate sensor models. However, this package could virtually be integrated with any robotics simulation that uses IMU.
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
@@ -33,12 +33,12 @@ Disclaimer: The algorithm is based on https://github.com/Aceinna/gnss-ins-sim. M
 
 - Noises are due to bias constant, bias drift and white noise(random walk). Bias drift is the only component that accumulates over time. The bias parameters (a,b) which can be found in imu_gen_model.py / bias_drift() are fixed for each axis (x,y,z) and generated upon receiving first true reading.Do note that if bias instability correlation is not defined, bias drift will simply be drift constant multiply a random number from a Gaussian distribution. More details can be found -> https://github.com/Aceinna/gnss-ins-sim/blob/master/gnss_ins_sim/docs/gnss-ins-sim-doc.md
 
-## Imu Models
+<!-- ## Imu Models
 
 Demo of pre-defined IMU models:
 
-AHRS380 (low accuracy)
-![Alt Text](https://drive.google.com/file/d/13lOwU5MFz1uCGPPB37YFFyK0Mr3gzGKx/view?usp=sharing) ![Alt Text](https://drive.google.com/file/d/1DULPMnWGf8dvqujFu6gQAp6zivGQu-7x/view?usp=sharing)
+AHRS380 (low accuracy) -->
+
 
 ## Setup
 
@@ -54,12 +54,12 @@ Dependencies:
 - numpy
 - std_msgs
 
-Go to ros workspace and clone repo
-`cd /<catkin_ws>/src/`
+Go to ros workspace and clone repo <br>
+`cd /<catkin_ws>/src/`<br>
 `git clone https://github.com/zejiekong/imu_ros.git`
 
-Build workspace <br/>
-`cd ..`<br/>
+Build workspace <br>
+`cd ..`<br>
 `catkin_make`
 
 Source setup.bash
@@ -67,18 +67,20 @@ Source setup.bash
 
 ## Usage
 
-To initialize the noise model
+To initialize the noise model <br>
 `roslaunch imu_noise imu_noise.launch`
 
-Visualisation of output in rqt_plot
-`rqt_plot /imu_real/<angular_velocity/linear_acceleration>`
+Visualisation of output in rqt_plot <br>
+`rqt_plot /imu_real/<angular_velocity/linear_acceleration>`<br>
+
 Tick autoscroll for real-time input.
 
 Parameters:
 
 - Accuracy of IMU ("low"/"mid"/"high"). Default -> "high"
 - Sampling frequency of IMU. Default -> 100.
-  Can be set in "imu_noise/config/params.yaml".
+
+Can be set in "imu_noise/config/params.yaml".
 
 ## Project Status
 
