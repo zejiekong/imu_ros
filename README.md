@@ -38,7 +38,7 @@ Disclaimer: The algorithm is based on https://github.com/Aceinna/gnss-ins-sim. M
 Demo of pre-defined IMU models:
 
 AHRS380 (low accuracy)
-![alt-text-1](https://drive.google.com/file/d/13lOwU5MFz1uCGPPB37YFFyK0Mr3gzGKx/view?usp=sharing) ![alt-text-2](https://drive.google.com/file/d/1DULPMnWGf8dvqujFu6gQAp6zivGQu-7x/view?usp=sharing)
+![Alt Text](https://drive.google.com/file/d/13lOwU5MFz1uCGPPB37YFFyK0Mr3gzGKx/view?usp=sharing) ![Alt Text](https://drive.google.com/file/d/1DULPMnWGf8dvqujFu6gQAp6zivGQu-7x/view?usp=sharing)
 
 ## Setup
 
@@ -58,8 +58,8 @@ Go to ros workspace and clone repo
 `cd /<catkin_ws>/src/`
 `git clone https://github.com/zejiekong/imu_ros.git`
 
-Build workspace
-`cd ..`
+Build workspace <br/>
+`cd ..`<br/>
 `catkin_make`
 
 Source setup.bash
