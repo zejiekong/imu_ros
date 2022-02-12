@@ -1,0 +1,4 @@
+<launch>
+    <node name="imu_noise" pkg="imu_noise" type="imu_noise_model.py" output="screen"/>
+    <rosparam command="load" file="$(find imu_noise)/config/params.yaml" />
+</launch>
