@@ -10,13 +10,13 @@ Disclaimer: The algorithm is based on https://github.com/Aceinna/gnss-ins-sim. M
 
 - [General Info](#general-information)
 - [Features](#features)
-<!-- - [Imu Models](#imu-models) -->
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Status](#project-status)
-<!-- - [Room for Improvement](#room-for-improvement) -->
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
+<!-- - [Imu Models](#imu-models) -->
+<!-- - [Room for Improvement](#room-for-improvement) -->
 <!-- * [License](#license) -->
 
 ## General Information
