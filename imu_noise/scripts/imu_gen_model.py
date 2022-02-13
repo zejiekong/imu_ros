@@ -3,10 +3,10 @@ import math
 import imu_model_data
 
 class imu_model:
-    def __init__(self,accuracy):
+    def __init__(self,accuracy,fs):
         self.accel_err = imu_model_data.IMU_dict[accuracy]["accel"]
         self.gyro_err =  imu_model_data.IMU_dict[accuracy]["gyro"]
-        self.fs = 100
+        self.fs = fs
 
         self.old_accel_bias_drift = np.array([0,0,0])
         self.old_gyro_bias_drift = np.array([0,0,0])
@@ -98,8 +98,6 @@ class imu_model:
             b[2] = drift[2] * np.sqrt(1.0 - np.exp(-2/(self.fs * corr_time[2])))
 
 # if __name__ == "__main__":
-#     Imu = imu_model("high")
+#     Imu = imu_model("low",100)
 #     Imu.set_sensor_bias_param()
-#     print(Imu.accel_gen(np.array([1,1,1]))) #input is 1d array
-#     print(Imu.accel_gen(np.array([1,1,1])))
-#     print(Imu.accel_gen(np.array([1,1,1])))
+
