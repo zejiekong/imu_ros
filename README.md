@@ -55,11 +55,11 @@ Dependencies:
 - std_msgs
 
 Go to ros workspace and clone repo <br>
-```cd /<catkin_ws>/src/`
+```cd /<catkin_ws>/src/` <br>
 git clone https://github.com/zejiekong/imu_ros.git```
 
 Build workspace <br>
-```cd .. `
+```cd .. ` <br>
 catkin_make```
 
 Source setup.bash
