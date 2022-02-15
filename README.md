@@ -55,23 +55,23 @@ Dependencies:
 - std_msgs
 
 Go to ros workspace and clone repo <br>
-`cd /<catkin_ws>/src/`<br>
-`git clone https://github.com/zejiekong/imu_ros.git`
+```cd /<catkin_ws>/src/`
+git clone https://github.com/zejiekong/imu_ros.git```
 
 Build workspace <br>
-`cd ..`<br>
-`catkin_make`
+```cd .. `
+catkin_make```
 
 Source setup.bash
-`source devel/setup.bash`
+```source devel/setup.bash```
 
 ## Usage
 
 To initialize the noise model <br>
-`roslaunch imu_noise imu_noise.launch`
+```roslaunch imu_noise imu_noise.launch```
 
 Visualisation of output in rqt_plot <br>
-`rqt_plot /imu_real/<angular_velocity/linear_acceleration>`<br>
+```rqt_plot /imu_real/<angular_velocity/linear_acceleration>```<br>
 
 Tick autoscroll for real-time input.
 
