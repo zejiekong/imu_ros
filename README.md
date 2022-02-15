@@ -62,7 +62,7 @@ Build workspace <br>
 ```cd .. ``` <br>
 ```catkin_make```
 
-Source setup.bash
+Source setup.bash <br>
 ```source devel/setup.bash```
 
 ## Usage
